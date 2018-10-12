@@ -10,22 +10,63 @@ public class BlackJackManager : MonoBehaviour {
 	public GameObject tryAgain;
 	public string loadScene;
 
-	public void PlayerBusted(){
-		HidePlayerButtons();
-		GameOverText("YOU BUST", Color.red);
-	}
+    public AudioClip loseBeep;
+    public AudioClip winBeep;
 
-	public void DealerBusted(){
-		GameOverText("DEALER BUSTS!", Color.green);
-	}
+    public AudioSource loseSound;
+    public AudioSource winSound;
+
+    public GameObject dealerSprite;
+    public SpriteRenderer dealerSr;
+
+    public Sprite sparkling707;
+    public Sprite question707;
+    public Sprite broken707;
+
+    private void Start()
+    {
+        dealerSprite.GetComponent<SpriteRenderer>().sprite = question707;
+      
+    }
+
+
+    public void PlayerBusted()
+    {
+        HidePlayerButtons();
+        GameOverText("YOU BUST", Color.red);
+        loseSound.clip = loseBeep;
+        loseSound.Play();
+
+        dealerSprite.GetComponent<SpriteRenderer>().sprite = sparkling707;
+
+    }
+
+    public void DealerBusted()
+    {
+        GameOverText("DEALER BUSTS!", Color.green);
+        winSound.clip = winBeep;
+        winSound.Play();
+
+        dealerSprite.GetComponent<SpriteRenderer>().sprite = broken707;
+
+    }
 		
 	public void PlayerWin(){
-		GameOverText("YOU WIN!", Color.green);
-	}
+        GameOverText("YOU WIN!", Color.green);
+        winSound.clip = winBeep;
+        winSound.Play();
+
+        dealerSprite.GetComponent<SpriteRenderer>().sprite = broken707;
+
+    }
 		
 	public void PlayerLose(){
-		GameOverText("YOU LOSE.", Color.red);
-	}
+        GameOverText("YOU LOSE.", Color.red);
+        loseSound.clip = loseBeep;
+        loseSound.Play();
+
+        dealerSprite.GetComponent<SpriteRenderer>().sprite = sparkling707;
+    }
 
 
 	public void BlackJack(){
