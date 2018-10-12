@@ -50,10 +50,10 @@ public class BlackJackHand : MonoBehaviour {
 		cardObj.name = card.ToString();
 
 		cardObj.transform.SetParent(handBase.transform);
-		cardObj.GetComponent<RectTransform>().localScale = new Vector2(1, 1);
+		cardObj.GetComponent<RectTransform>().localScale = new Vector2(0.7f, 0.7f);
 		cardObj.GetComponent<RectTransform>().anchoredPosition = 
 			new Vector2(
-				xOffset + pos * 110, 
+				xOffset + pos * 80, 
 				yOffset);
 
 		cardObj.GetComponentInChildren<Text>().text = deck.GetNumberString(card);

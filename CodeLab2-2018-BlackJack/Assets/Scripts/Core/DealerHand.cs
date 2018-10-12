@@ -25,7 +25,7 @@ public class DealerHand : BlackJackHand {
 			if(!reveal){
 				handVals = hand[1].GetCardHighValue();
 
-				total.text = "Dealer: " + handVals + " + ???";
+				total.text = "Dealer: " + handVals + " + ?";
 			} else {
 				handVals = GetHandValue();
 

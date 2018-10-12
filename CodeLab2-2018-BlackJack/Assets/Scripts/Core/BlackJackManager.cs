@@ -12,26 +12,32 @@ public class BlackJackManager : MonoBehaviour {
 
 	public void PlayerBusted(){
 		HidePlayerButtons();
-		GameOverText("YOU BUST", Color.red);
+		GameOverText("YOU BUST!", Color.red);
+        DealerScore.scoreValue++;
 	}
 
 	public void DealerBusted(){
 		GameOverText("DEALER BUSTS!", Color.green);
-	}
+        ScoreCounter.scoreValue++;
+    }
 		
 	public void PlayerWin(){
 		GameOverText("YOU WIN!", Color.green);
-	}
+        ScoreCounter.scoreValue++;
+    }
 		
 	public void PlayerLose(){
 		GameOverText("YOU LOSE.", Color.red);
-	}
+        DealerScore.scoreValue++;
+
+    }
 
 
 	public void BlackJack(){
 		GameOverText("Black Jack!", Color.green);
 		HidePlayerButtons();
-	}
+        ScoreCounter.scoreValue += 3;
+    }
 
 	public void GameOverText(string str, Color color){
 		statusText.text = str;

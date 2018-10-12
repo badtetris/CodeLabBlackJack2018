@@ -10,6 +10,7 @@ public class OverBlackJackHand : BlackJackHand {
 			BlackJackManager manager = GameObject.Find("BlackJackManager").GetComponent<BlackJackManager>();
 
 			manager.BlackJack();
+            
 		}
 	}
 		
