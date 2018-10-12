@@ -4,7 +4,7 @@ using System.Collections;
 public class BlackJackDeck: DeckOfCards {
 
 	protected override bool IsValidDeck(){
-		return deck != null && deck.Count > 20;
+		return deck != null && deck.Count > 2;
 	}
 
 	protected override void AddCardsToDeck(){

@@ -6,7 +6,7 @@ public class OverBlackJackHand : BlackJackHand {
 	protected override void SetupHand(){
 		base.SetupHand();
 
-		if(GetHandValue() == 21){
+		if(GetHandValue() >= currentAuctionValue){
 			BlackJackManager manager = GameObject.Find("BlackJackManager").GetComponent<BlackJackManager>();
 
 			manager.BlackJack();
